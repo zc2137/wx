@@ -1,0 +1,15 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /wx
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+      # 配置jdbc
+    url: jdbc:mysql://localhost:3306/wx
+    username: root
+    password: root
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
