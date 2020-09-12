@@ -1,7 +1,9 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.mapping.IOrderMapping;
 import com.example.demo.mapping.IShopMapping;
 import com.example.demo.mapping.ISystemMapping;
+import com.example.demo.mapping.IUserMapping;
 import com.example.demo.service.IShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,4 +21,10 @@ public class BastService {
 
     @Autowired
     protected IShopMapping shopMapping;
+
+    @Autowired
+    protected IOrderMapping orderMapping;
+
+    @Autowired
+    protected IUserMapping userMapping;
 }

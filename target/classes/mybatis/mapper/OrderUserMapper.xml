@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapping.IOrderMapping">
+    <!--开启二级缓存,使用Ehcache缓存框架-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <resultMap id="orderMap" type="com.example.demo.domain.OrderUser">
+        <id column="id" property="id"></id>
+        <result column="shop_id" property="OrderID"></result>
+        <result column="express_seat" property="expressSeat"></result>
+        <result column="express_id" property="expressID"></result>
+        <result column="take_code" property="takeCode"></result>
+        <result column="harvest_name" property="harvestName"></result>
+        <result column="harvest_telephone" property="harvestTelephone"></result>
+        <result column="place" property="place"></result>
+        <result column="price" property="price"></result>
+        <result column="remarks" property="remarks"></result>
+        <result column="time" property="time" javaType="date"></result>
+        <result column="heat" property="heat"></result>
+        <result column="now_state" property="nowState"></result>
+        <result column="staff_id" property="staffID"></result>
+        <result column="user_id" property="userID"></result>
+    </resultMap>
+
+    <select id="findAllOrderUser" resultMap="orderMap">
+        select * from order_user
+    </select>
+</mapper>
