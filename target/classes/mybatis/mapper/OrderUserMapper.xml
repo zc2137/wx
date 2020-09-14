@@ -27,4 +27,18 @@
     <select id="findAllOrderUser" resultMap="orderMap">
         select * from order_user
     </select>
+
+    <update id="staffSaveOrder">
+        update order_user set staff_username = #{username} , staff_id = #{staffID} where order_id = #{orderID};
+    </update>
+
+    <insert id="createOrderUser" keyColumn="id" keyProperty="id" parameterType="com.example.demo.domain.OrderUser" useGeneratedKeys="true">
+        INSERT INTO order_user VALUES
+        (
+        null,#{orderID},#{expressSeat},
+        #{expressID},#{takeCode},#{harvestName},
+        #{harvestTelephone},#{place},#{price},
+        #{remarks},#{time},#{heat},#{nowState},null ,null
+        )
+    </insert>
 </mapper>

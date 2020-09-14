@@ -6,6 +6,7 @@ import com.example.demo.mapping.ISystemMapping;
 import com.example.demo.mapping.IUserMapping;
 import com.example.demo.service.IShopService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.sound.midi.VoiceStatus;
@@ -27,4 +28,7 @@ public class BastService {
 
     @Autowired
     protected IUserMapping userMapping;
+
+    @Autowired
+    protected RedisTemplate redisTemplate;
 }

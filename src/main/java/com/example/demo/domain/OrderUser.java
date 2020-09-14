@@ -45,4 +45,6 @@ public class OrderUser {
     private Long userID;            //用户的ID
 
     private String dateFormat;      //格式化的日期
+
+    private String createUserID;       //创建该订单用户的ID
 }

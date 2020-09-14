@@ -13,4 +13,16 @@ public interface IOrderMapping {
      * @return
      */
     List<OrderUser> findAllOrderUser();
+
+    /**
+     * 外送员抢到订单
+     * @return
+     */
+    Integer staffSaveOrder(String username,String staffID,String orderID);
+
+    /**
+     * 创建代取快递的任务的方法
+     * @return
+     */
+    Integer createOrderUser(OrderUser orderUser);
 }

@@ -5,7 +5,10 @@ import com.example.demo.service.IShopService;
 import com.example.demo.service.ISystemService;
 import com.example.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
+
+import javax.annotation.Resource;
 
 /**
  * 基类控制器
@@ -24,4 +27,7 @@ public class BastController {
 
     @Autowired
     protected IUserService userService;
+
+    @Autowired
+    protected RedisTemplate<String,Object> redisTemplate;
 }

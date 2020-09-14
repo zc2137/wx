@@ -5,9 +5,22 @@
     <title>测试用例的HTML</title>
 </head>
 
-    <form action="/wx/User/staffLogin" method="post">
-        账号：<input name="username"/>
-        密码：<input name="password"/>
+    <!--<form action="/wx/order/staffSave" method="post">
+        ID：<input name="staffID"/>   <br>
+        用户名：<input name="username"/><br>
+        订单ID：<input name="orderID"/><br>
+        账号当前状态：<input name="nowState"/><br>
+        <input type="submit" value="提交">
+    </form>-->
+
+    <form action="/wx/order/creatStaffOrder" method="post">
+        名称：<input name="expressSeat"/>   <br>
+        ID ：<input name="expressID"/><br>
+        取件码：<input name="takeCode"/><br>
+        姓名：<input name="harvestName"/><br>
+        电话：<input name="harvestTelephone"/><br>
+        地点：<input name="place"/><br>
+        备注：<input name="remarks"/><br>
         <input type="submit" value="提交">
     </form>
 <body>
