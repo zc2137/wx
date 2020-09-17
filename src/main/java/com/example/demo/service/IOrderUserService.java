@@ -29,4 +29,11 @@ public interface IOrderUserService {
      * @return
      */
     Integer creatUserOrder(OrderUser orderUser);
+
+    /**
+     * 根据订单的ID删除对应的订单信息
+     * @param orderID
+     * @return
+     */
+    Integer deleteUserOrder(String orderID);
 }

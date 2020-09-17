@@ -23,7 +23,35 @@
         <result column="type" property="type"></result>
     </resultMap>
 
+    <resultMap id="shopBySUP" type="com.example.demo.domain.SupermarketCommodity">
+        <id column="id" property="id"></id>
+        <result column="com_id" property="comID"></result>
+        <result column="name" property="name"></result>
+        <result column="type_name" property="typeName"></result>
+        <result column="type_id" property="typeID"></result>
+        <result column="price" property="price"></result>
+        <result column="img" property="img"></result>
+        <result column="norms" property="norms"></result>
+        <result column="now_state" property="nowState"></result>
+    </resultMap>
+
     <select id="findAllShopByWork" resultMap="shopMap">
         select * from shop
     </select>
+
+    <select id="findAllBySup" resultMap="shopBySUP">
+        select * from supermarket_commodity
+    </select>
+
+    <insert id="saveShopSUP" >
+        insert into supermarket_commodity values
+        (
+            null,#{comID},#{name},#{typeName},#{typeID},
+            #{price},#{img},#{norms},#{nowState}
+        )
+    </insert>
+
+    <update id="pullShopSUP">
+        update supermarket_commodity set now_state = 0 where comID = #{comID}
+    </update>
 </mapper>

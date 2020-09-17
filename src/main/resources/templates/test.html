@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>测试用例的HTML</title>
+
+    <style>
+        body{
+            margin: 2em 20em;
+        }
+
+    </style>
 </head>
 
     <!--<form action="/wx/order/staffSave" method="post">
@@ -23,6 +30,35 @@
         备注：<input name="remarks"/><br>
         <input type="submit" value="提交">
     </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <form action="/wx/shop/saveSUP" method="post">
+        商品状态 <input name="nowState">
+        商品名称 <input name="name">
+        分类ID <input name="typeID">
+        分类名称 <input name="typeName">
+        价格 <input name="price">
+        规格 <input name="norms">
+        图片 <input name="img">
+        管理员姓名<input name="adminUsername">
+        管理员密码 <input name="adminPassword">
+
+        <input type="submit" value="提交">
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+        <form action="/wx/shop/pullSUP" method="post">
+            商品ID   <input name="comID">
+            管理员姓名<input name="username">
+            管理员密码<input name="password">
+            <input type="submit" value="提交">
+        </form>
+
 <body>
 
 </body>

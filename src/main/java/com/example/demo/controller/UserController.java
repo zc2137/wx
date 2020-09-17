@@ -43,8 +43,8 @@ public class UserController extends BastController {
      */
     @PostMapping("/login")
     public Message userLogin(
-            @RequestParam(name = "username", required = true) String username,
-            @RequestParam(name = "password", required = true) String password
+            @RequestParam(name = "username", required = true) String username
+
     ){
 
         return null;

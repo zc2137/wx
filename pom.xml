@@ -14,6 +14,9 @@
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
 
+    <!-- 这里打成war包 若打jar，需将war改为jar -->
+    <packaging>war</packaging>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>

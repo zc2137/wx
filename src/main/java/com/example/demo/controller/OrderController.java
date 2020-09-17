@@ -89,6 +89,8 @@ public class OrderController extends BastController {
             //代表创建订单失败
             return MessageUtil.messageAuto( 400,"创建订单失败",null );
         }else {
+            //如果订单创建成功，则加入到redis中
+            redisTemplate.opsForValue().set( orderUser.getOrderID(),new Integer( 0 ) );
             return MessageUtil.messageAuto( 200,"创建订单成功",null );
         }
 
@@ -105,9 +107,31 @@ public class OrderController extends BastController {
             @RequestParam(name = "orderID" ,required = true) String orderID
     ){
         //先查询redis中是否存在用户信息和订单信息
-        String o = (String) redisTemplate.opsForValue().get( "user"+userID );
+        Integer uID = (Integer) redisTemplate.opsForValue().get( "user"+userID );
+        Integer oID = (Integer) redisTemplate.opsForValue().get( orderID );
 
+        if( uID == null ){
+            //如果数据为空
+            //返回错误信息
+            return MessageUtil.messageAuto( 400,"请先登录",null );
+        }else if( oID == null ){
+            //如果数据为空
+            //返回错误信息
+            return MessageUtil.messageAuto( 400,"抱歉，订单信息不存在",null );
+        }else if(uID == 0){
+            return MessageUtil.messageAuto( 400 ,"抱歉,当前账号异常，请联系客服",null );
+        }else {
 
-        return null;
+            //删除对应的订单信息
+            Integer i = orderUserService.deleteUserOrder( orderID );
+            if(i != 1 ){
+                return MessageUtil.messageAuto( 400 ,"抱歉,订单删除失败",null );
+            }else {
+
+                //删除redis中的数据
+                Boolean delete = redisTemplate.delete( orderID );
+                return MessageUtil.messageAuto( 400 ,"订单删除成功",delete );
+            }
+        }
     }
 }

@@ -48,4 +48,9 @@ public class OrderUserServiceImpl extends BastService implements IOrderUserServi
         }
         return i;
     }
+
+    @Override
+    public Integer deleteUserOrder(String orderID) {
+        return orderMapping.deleteOrderUser( orderID );
+    }
 }

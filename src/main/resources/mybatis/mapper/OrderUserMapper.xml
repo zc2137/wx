@@ -42,4 +42,8 @@
         #{remarks},#{time},#{heat},#{nowState},null ,null,#{createUserID}
         )
     </insert>
+
+    <delete id="deleteOrderUser">
+        delete from order_user where order_id = #{orderID}
+    </delete>
 </mapper>

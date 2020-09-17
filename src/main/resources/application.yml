@@ -69,4 +69,4 @@ spring:
   redis:
     host: 121.199.19.142
     password: 16291629
-debug: true
+debug: false

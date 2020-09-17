@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.domain.User;
+import com.example.demo.util.CheckAdminPassword;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +17,7 @@ class DemoApplicationTests {
 
     @Resource
     private RedisTemplate<String,Object> redisTemplate;
+
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
@@ -38,7 +40,13 @@ class DemoApplicationTests {
 
     @Test
     void test(){
-        String o = redisTemplate.opsForValue().get( "123456" )+"";
-        System.out.println(o);
+       // redisTemplate.opsForValue().set( "haha" ,"1111");
+        System.out.println(CheckAdminPassword.checkAP( redisTemplate,"a","a" ));
+    }
+
+    @Test
+    void testRedis(){
+        Boolean haha = redisTemplate.delete( "haha" );
+        System.out.println(haha);
     }
 }

@@ -25,4 +25,12 @@ public interface IOrderMapping {
      * @return
      */
     Integer createOrderUser(OrderUser orderUser);
+
+    /**
+     * 删除对应的快递代取的订单信息
+     * @param orderID
+     * @return
+     */
+    Integer deleteOrderUser(String orderID);
+
 }
